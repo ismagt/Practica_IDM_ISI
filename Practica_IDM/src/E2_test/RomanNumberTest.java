@@ -25,11 +25,31 @@ public class RomanNumberTest {
 	}
 	
 	@Test
-	public void testForAnoCero()
+	public void testForAnyNumber()
 	{
 		numeroRomano="MMMMMCMXCIX";
-		System.out.print(RomanNumeral.convertir(numeroRomano));
-		
+		RomanNumeral.convertir(numeroRomano);
 	}
 	
+	@Test(expected = InvalidParameterException.class)
+	public void testForEmptyInput()
+	{
+		numeroRomano="";
+		RomanNumeral.convertir(numeroRomano);
+	}
+	
+	@Test(expected = InvalidParameterException.class)
+	public void testForOutDomain()
+	{
+		numeroRomano="AAAA";
+		RomanNumeral.convertir(numeroRomano);
+	}
+	
+	
+	@Test(expected = NullPointerException.class)
+	public void testForNullInput()
+	{
+		numeroRomano=null;
+		RomanNumeral.convertir(numeroRomano);
+	}
 }

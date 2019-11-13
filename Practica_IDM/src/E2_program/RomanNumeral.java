@@ -1,5 +1,6 @@
 package E2_program;
 
+import java.security.InvalidParameterException;
 import java.util.Hashtable;
 
 public class RomanNumeral 
@@ -46,10 +47,12 @@ public class RomanNumeral
 	
 	/*
 	 * Método para llevar a cabo la conversión de números romano a decimal
-	 * @param entrada: cadena que contiene el número romano que se quiere convertir a decimal
-	 * @return decimal: corresponde al numero equivalente en decimal del número romano ingresado como parámetro
+	 * 
+	 * @param entrada: Cadena que se desea convertir
+	 * @return decimal: Numero en base 10
+	 * @throws InvalidParameterException
 	 */
-	public static int convertir(String entrada){
+	public static int convertir(String entrada) throws InvalidParameterException{
 		String romano = entrada.replaceAll(" ","");	//elimina los espacios en blanco al inicio y al final de la cadena
 		llenarHashtable();
 		
@@ -64,9 +67,11 @@ public class RomanNumeral
 			if(numerosRomanos.containsKey(letra)){
 				decimal = decimal + numerosRomanos.get(letra);
 			}else {
-				System.out.println("Error");
+				throw new InvalidParameterException();
 			}
 		}
+		if (decimal == 0)
+			throw new InvalidParameterException();
 		decimal = restarTerminos(romano, decimal);
 		return decimal;
 	}
