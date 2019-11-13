@@ -32,5 +32,20 @@ public class BisiestoTest {
 		
 	}
 	
+	@Test(expected=InvalidParameterException.class)
+	public void testForNegativeAno()
+	{
+		ano=-1;
+		Bisiesto.esBisiesto(ano);
+		
+	}
+
+	@Test
+	public void testForAnyAno()
+	{
+		ano=2000;
+		Bisiesto.esBisiesto(ano);
+		
+	}
 
 }
