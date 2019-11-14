@@ -4,6 +4,7 @@ import java.security.InvalidParameterException;
 
 import org.junit.*;
 
+import E1_program.Bisiesto;
 import E2_program.RomanNumeral;
 
 import java.util.*;
@@ -27,10 +28,106 @@ public class RomanNumberTest {
 	@Test
 	public void testForAnyNumber()
 	{
-		numeroRomano="MMMMMCMXCIX";
-		RomanNumeral.convertir(numeroRomano);
+		numeroRomano="IIII";
+		System.out.println(RomanNumeral.convertir(numeroRomano));
 	}
 	
+	@Test(expected=InvalidParameterException.class)
+	public void noIRepetidas()
+	{
+		numeroRomano="IIII";
+		RomanNumeral.convertir(numeroRomano);
+		
+	}
+	
+	@Test(expected=InvalidParameterException.class)
+	public void noMRepetidas()
+	{
+		numeroRomano="MMMMM";
+		RomanNumeral.convertir(numeroRomano);
+		
+	}
+	
+	@Test(expected=InvalidParameterException.class)
+	public void noVRepetidas()
+	{
+		numeroRomano="XVV";
+		RomanNumeral.convertir(numeroRomano);
+		
+	}
+	
+	@Test(expected=InvalidParameterException.class)
+	public void noDRepetidas()
+	{
+		numeroRomano="MDD";
+		RomanNumeral.convertir(numeroRomano);
+		
+	}
+	
+	@Test(expected=InvalidParameterException.class)
+	public void contieneLetrasRomanos()
+	{
+		numeroRomano="lafjjkf";
+		RomanNumeral.convertir(numeroRomano);
+		
+	}
+	
+	@Test(expected=InvalidParameterException.class)
+	public void iAntesV()
+	{
+		numeroRomano="XIV";
+		RomanNumeral.convertir(numeroRomano);
+		
+	}
+	
+	@Test(expected=InvalidParameterException.class)
+	public void iAntesv()
+	{
+		numeroRomano="XID";
+		RomanNumeral.convertir(numeroRomano);
+		
+	}
+	
+	@Test(expected=InvalidParameterException.class)
+	public void xAntesL()
+	{
+		numeroRomano="CXL";
+		RomanNumeral.convertir(numeroRomano);
+		
+	}
+	
+	@Test(expected=InvalidParameterException.class)
+	public void xAntesl()
+	{
+		numeroRomano="CXM";
+		RomanNumeral.convertir(numeroRomano);
+		
+	}
+	
+	@Test(expected=InvalidParameterException.class)
+	public void vl()
+	{
+		numeroRomano="VL";
+		RomanNumeral.convertir(numeroRomano);
+		
+	}
+	
+	@Test(expected=InvalidParameterException.class)
+	public void VIV()
+	{
+		numeroRomano="VIV";
+		RomanNumeral.convertir(numeroRomano);
+		
+	}
+	
+	@Test(expected=InvalidParameterException.class)
+	public void XXM()
+	{
+		numeroRomano="XXM";
+		RomanNumeral.convertir(numeroRomano);
+		
+	}
+    
 	@Test(expected = InvalidParameterException.class)
 	public void testForEmptyInput()
 	{
