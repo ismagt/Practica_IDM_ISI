@@ -1,13 +1,5 @@
 package E3_test;
 
-//
-// Instrucciones de compilación:
-// javac -cp .:./hamcrest-core-1.3.jar:./junit-4.12.jar AllTests.java
-//
-// Ejecución:
-// java -cp .:./hamcrest-core-1.3.jar:./junit-4.12.jar AllTests
-//
-
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
@@ -17,7 +9,7 @@ import junit.framework.JUnit4TestAdapter;
 
 // This section declares all of the test classes in the program.
 @RunWith (Suite.class)
-@Suite.SuiteClasses ({ Embotelladora.class })  // Add test classes here.
+@Suite.SuiteClasses ({ EmbotelladoraTest.class })  // Add test classes here.
 
 public class AllTest
 {
