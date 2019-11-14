@@ -29,9 +29,81 @@ public class EmbotelladoraTest {
 	@Test
 	public void testInitial()
 	{
-		pequenas = 5;
-		grandes = 5;
+		pequenas = 0;
+		grandes = 0;
 		litros= 5;
+		Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros);
+	}
+	
+	@Test
+	public void noHayBotellas()
+	{
+		pequenas = 0;
+		grandes = 0;
+		litros= 5;
+		Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros);
+	}
+	
+	@Test
+	public void UnaBotellaGrande()
+	{
+		pequenas = 0;
+		grandes = 1;
+		litros= 5;
+		Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros);
+	}
+
+	@Test
+	public void UnaBotellapequeña()
+	{
+		pequenas = 1;
+		grandes = 1;
+		litros= 1;
+		Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros);
+	}
+	
+	@Test
+	public void dosBotellapequeña()
+	{
+		pequenas = 2;
+		grandes = 1;
+		litros= 2;
+		Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros);
+	}
+	
+	@Test
+	public void sieteLitros()
+	{
+		pequenas = 2;
+		grandes = 1;
+		litros= 7;
+		Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros);
+	}
+	
+	@Test
+	public void sieteLitros_dosPequeñas()
+	{
+		pequenas = 2;
+		grandes = 0;
+		litros= 7;
+		Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros);
+	}
+	
+	@Test
+	public void sieteLitros_cuatroPequeñas()
+	{
+		pequenas = 4;
+		grandes = 0;
+		litros= 7;
+		Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros);
+	}
+	
+	@Test
+	public void sieteLitros_unaGRandes()
+	{
+		pequenas = 1;
+		grandes = 0;
+		litros= 7;
 		Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros);
 	}
 
