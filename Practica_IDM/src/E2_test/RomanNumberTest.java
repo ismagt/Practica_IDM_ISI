@@ -1,5 +1,6 @@
 package E2_test;
 import static org.junit.Assert.*;
+
 import java.security.InvalidParameterException;
 
 import org.junit.*;
@@ -29,14 +30,14 @@ public class RomanNumberTest {
 	public void testForAnyNumber()
 	{
 		numeroRomano="IIII";
-		System.out.println(RomanNumeral.convertir(numeroRomano));
+		assertEquals(InvalidParameterException.class,RomanNumeral.convertir(numeroRomano));
 	}
 	
 	@Test(expected=InvalidParameterException.class)
 	public void noIRepetidas()
 	{
 		numeroRomano="IIII";
-		RomanNumeral.convertir(numeroRomano);
+		assertEquals(InvalidParameterException.class,RomanNumeral.convertir(numeroRomano));
 		
 	}
 	
@@ -44,7 +45,7 @@ public class RomanNumberTest {
 	public void noMRepetidas()
 	{
 		numeroRomano="MMMMM";
-		RomanNumeral.convertir(numeroRomano);
+		assertEquals(InvalidParameterException.class,RomanNumeral.convertir(numeroRomano));
 		
 	}
 	
@@ -52,7 +53,7 @@ public class RomanNumberTest {
 	public void noVRepetidas()
 	{
 		numeroRomano="XVV";
-		RomanNumeral.convertir(numeroRomano);
+		assertEquals(InvalidParameterException.class,RomanNumeral.convertir(numeroRomano));
 		
 	}
 	
@@ -60,7 +61,7 @@ public class RomanNumberTest {
 	public void noDRepetidas()
 	{
 		numeroRomano="MDD";
-		RomanNumeral.convertir(numeroRomano);
+		assertEquals(InvalidParameterException.class,RomanNumeral.convertir(numeroRomano));
 		
 	}
 	
@@ -68,7 +69,7 @@ public class RomanNumberTest {
 	public void contieneLetrasRomanos()
 	{
 		numeroRomano="lafjjkf";
-		RomanNumeral.convertir(numeroRomano);
+		assertEquals(InvalidParameterException.class,RomanNumeral.convertir(numeroRomano));
 		
 	}
 	
@@ -76,7 +77,7 @@ public class RomanNumberTest {
 	public void iAntesV()
 	{
 		numeroRomano="XIV";
-		RomanNumeral.convertir(numeroRomano);
+		assertEquals(14,RomanNumeral.convertir(numeroRomano));
 		
 	}
 	
@@ -84,7 +85,7 @@ public class RomanNumberTest {
 	public void iAntesv()
 	{
 		numeroRomano="XID";
-		RomanNumeral.convertir(numeroRomano);
+		assertEquals(InvalidParameterException.class,RomanNumeral.convertir(numeroRomano));
 		
 	}
 	
@@ -92,7 +93,7 @@ public class RomanNumberTest {
 	public void xAntesL()
 	{
 		numeroRomano="CXL";
-		RomanNumeral.convertir(numeroRomano);
+		assertEquals(140,RomanNumeral.convertir(numeroRomano));
 		
 	}
 	
@@ -100,7 +101,7 @@ public class RomanNumberTest {
 	public void xAntesl()
 	{
 		numeroRomano="CXM";
-		RomanNumeral.convertir(numeroRomano);
+		assertEquals(InvalidParameterException.class,RomanNumeral.convertir(numeroRomano));
 		
 	}
 	
@@ -108,7 +109,7 @@ public class RomanNumberTest {
 	public void vl()
 	{
 		numeroRomano="VL";
-		RomanNumeral.convertir(numeroRomano);
+		assertEquals(InvalidParameterException.class,RomanNumeral.convertir(numeroRomano));
 		
 	}
 	
@@ -116,7 +117,7 @@ public class RomanNumberTest {
 	public void VIV()
 	{
 		numeroRomano="VIV";
-		RomanNumeral.convertir(numeroRomano);
+		assertEquals(InvalidParameterException.class,RomanNumeral.convertir(numeroRomano));
 		
 	}
 	
@@ -124,7 +125,7 @@ public class RomanNumberTest {
 	public void XXM()
 	{
 		numeroRomano="XXM";
-		RomanNumeral.convertir(numeroRomano);
+		assertEquals(InvalidParameterException.class,RomanNumeral.convertir(numeroRomano));
 		
 	}
     
@@ -139,7 +140,7 @@ public class RomanNumberTest {
 	public void testForOutDomain()
 	{
 		numeroRomano="AAAA";
-		RomanNumeral.convertir(numeroRomano);
+		assertEquals(InvalidParameterException.class,RomanNumeral.convertir(numeroRomano));
 	}
 	
 	
