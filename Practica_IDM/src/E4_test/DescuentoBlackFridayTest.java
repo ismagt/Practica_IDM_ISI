@@ -37,53 +37,53 @@ public class DescuentoBlackFridayTest {
 		assertEquals(precioComparar, myPi, DescuentoBlackFriday.precioFinal(precioOriginal, descuento));
 	}
 	
-	@Test
+	@Test (expected = InvalidParameterException.class)
 	public void test1() {
 		precioOriginal = 0.0001;
 		descuento = -3;
-		assertEquals(InvalidParameterException.class, DescuentoBlackFriday.precioFinal(precioOriginal, descuento));
+		DescuentoBlackFriday.precioFinal(precioOriginal, descuento);
 	}
 	
-	@Test
+	@Test(expected = InvalidParameterException.class)
 	public void test2() {
 		precioOriginal = 0.00000000001;
 		descuento = -3000;
-		assertEquals(InvalidParameterException.class, DescuentoBlackFriday.precioFinal(precioOriginal, descuento));
+		DescuentoBlackFriday.precioFinal(precioOriginal, descuento);
 	}
 	
-	@Test
+	@Test(expected = InvalidParameterException.class)
 	public void test3() {
 		precioOriginal = -1000000;
 		descuento = 3000;
-		assertEquals(InvalidParameterException.class, DescuentoBlackFriday.precioFinal(precioOriginal, descuento));
+		DescuentoBlackFriday.precioFinal(precioOriginal, descuento);
 	}
 	
-	@Test
+	@Test(expected = InvalidParameterException.class)
 	public void test4() {
 		precioOriginal = -5;
 		descuento = 0.33333333333333333;
-		assertEquals(InvalidParameterException.class, DescuentoBlackFriday.precioFinal(precioOriginal, descuento));
+		DescuentoBlackFriday.precioFinal(precioOriginal, descuento);
 	}
 	
-	@Test
+	@Test(expected = InvalidParameterException.class)
 	public void test5() {
 		precioOriginal = -5;
 		descuento = 1;
-		assertEquals(InvalidParameterException.class, DescuentoBlackFriday.precioFinal(precioOriginal, descuento));
+		DescuentoBlackFriday.precioFinal(precioOriginal, descuento);
 	}
 	
-	@Test
+	@Test(expected = InvalidParameterException.class)
 	public void test6() {
 		precioOriginal = 0.1;
 		descuento = 200;
-		assertEquals(InvalidParameterException.class, DescuentoBlackFriday.precioFinal(precioOriginal, descuento));
+		DescuentoBlackFriday.precioFinal(precioOriginal, descuento);
 	}
 	
-	@Test
+	@Test(expected = InvalidParameterException.class)
 	public void test7() {
 		precioOriginal = 0.1;
 		descuento = 150;
-		assertEquals(InvalidParameterException.class, DescuentoBlackFriday.precioFinal(precioOriginal, descuento));
+		DescuentoBlackFriday.precioFinal(precioOriginal, descuento);
 	}
 	
 

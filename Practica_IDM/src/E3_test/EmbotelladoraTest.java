@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.*;
 
-import E3_program.Embotelladora;
+import E3_program.*;
 
 public class EmbotelladoraTest {
 	
@@ -28,22 +28,30 @@ public class EmbotelladoraTest {
 	   grandes = 0; 
 	}
 	
-	@Test
-	public void testInitial(expected=NoSolution.class)
+	@Test (expected=NoSolution.class)
+	public void testInitial()
 	{
 		pequenas = 0;
 		grandes = 0;
 		litros= 5;
-		assertEquals(NoSolution.class,Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros));
+		try {
+			assertEquals(NoSolution.class,Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros));
+		} catch (NoSolution e) {
+			return ;
+		}
 	}
 	
-	@Test
-	public void noHayBotellas(expected=NoSolution.class)
+	@Test(expected=NoSolution.class)
+	public void noHayBotellas()
 	{
 		pequenas = 0;
 		grandes = 0;
 		litros= 5;
-		assertEquals(NoSolution.class,Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros));
+		try {
+			Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros);
+		} catch (NoSolution e) {
+			return ;
+		}
 	}
 	
 	@Test
@@ -52,61 +60,88 @@ public class EmbotelladoraTest {
 		pequenas = 0;
 		grandes = 1;
 		litros= 5;
-		assertEquals(0,Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros));
+		try {
+			assertEquals(0,Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros));
+		} catch (NoSolution e) {
+			return ;
+		}
 	}
 
-	@Test
-	public void UnaBotellapequeña(expected=NoSolution.class)
+	@Test(expected=NoSolution.class)
+	public void UnaBotellapequena()
 	{
 		pequenas = 1;
 		grandes = 1;
 		litros= 1;
-		assertEquals(1,Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros));
+		try {
+			assertEquals(1,Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros));
+		} catch (NoSolution e) {
+			return ;
+		}	
 	}
 	
 	@Test
-	public void dosBotellapequeña()
+	public void dosBotellapequena()
 	{
 		pequenas = 2;
 		grandes = 1;
 		litros= 2;
-		assertEquals(2,Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros));
-	}
+		try {
+			assertEquals(0,Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros));
+		} catch (NoSolution e) {
+			return ;
+		}	}
 	
 	@Test
-	public void sieteLitros(expected=NoSolution.class)
+	public void sieteLitros()
 	{
 		pequenas = 2;
 		grandes = 1;
 		litros= 7;
-		assertEquals(2,Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros));
+		try {
+			assertEquals(2,Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros));
+		} catch (NoSolution e) {
+			return ;
+		}	
 	}
 	
-	@Test
-	public void sieteLitros_dosPequeñas(expected=NoSolution.class)
+	@Test(expected=NoSolution.class)
+	public void sieteLitros_dosPequenas()
 	{
 		pequenas = 2;
 		grandes = 0;
 		litros= 7;
-		assertEquals(NoSolution.class,Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros));
+		try {
+			Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros);
+		} catch (NoSolution e) {
+			return ;
+		}
 	}
 	
-	@Test
-	public void sieteLitros_cuatroPequeñas(expected=NoSolution.class)
+	@Test(expected=NoSolution.class)
+	public void sieteLitros_cuatroPequenas()
 	{
 		pequenas = 4;
 		grandes = 0;
 		litros= 7;
-		assertEquals(NoSolution.class,Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros));
+		try {
+			assertEquals(0,Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros));
+		} catch (NoSolution e) {
+			return ;
+		}
 	}
 	
-	@Test
-	public void sieteLitros_unaGRandes(expected=NoSolution.class)
+	@Test(expected=NoSolution.class)
+	public void sieteLitros_unaGrandes()
 	{
 		pequenas = 1;
 		grandes = 0;
 		litros= 7;
-		assertEquals(NoSolution.class,Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros));
+		try {
+			Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros);
+		} catch (NoSolution e) {
+			return ;
+		}
 	}
 
 }
