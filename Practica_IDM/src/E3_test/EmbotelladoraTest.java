@@ -1,5 +1,9 @@
 package E3_test;
 
+import static org.junit.Assert.assertEquals;
+
+import java.security.NoSolution;
+
 import org.junit.*;
 
 import E3_program.Embotelladora;
@@ -27,21 +31,21 @@ public class EmbotelladoraTest {
 	}
 	
 	@Test
-	public void testInitial()
+	public void testInitial(expected=NoSolution.class)
 	{
 		pequenas = 0;
 		grandes = 0;
 		litros= 5;
-		Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros);
+		assertEquals(NoSolution.class,Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros));
 	}
 	
 	@Test
-	public void noHayBotellas()
+	public void noHayBotellas(expected=NoSolution.class)
 	{
 		pequenas = 0;
 		grandes = 0;
 		litros= 5;
-		Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros);
+		assertEquals(NoSolution.class,Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros));
 	}
 	
 	@Test
@@ -50,16 +54,16 @@ public class EmbotelladoraTest {
 		pequenas = 0;
 		grandes = 1;
 		litros= 5;
-		Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros);
+		assertEquals(0,Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros));
 	}
 
 	@Test
-	public void UnaBotellapequeña()
+	public void UnaBotellapequeña(expected=NoSolution.class)
 	{
 		pequenas = 1;
 		grandes = 1;
 		litros= 1;
-		Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros);
+		assertEquals(1,Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros));
 	}
 	
 	@Test
@@ -68,11 +72,11 @@ public class EmbotelladoraTest {
 		pequenas = 2;
 		grandes = 1;
 		litros= 2;
-		Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros);
+		assertEquals(2,Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros));
 	}
 	
 	@Test
-	public void sieteLitros()
+	public void sieteLitros(expected=NoSolution.class)
 	{
 		pequenas = 2;
 		grandes = 1;
@@ -81,7 +85,7 @@ public class EmbotelladoraTest {
 	}
 	
 	@Test
-	public void sieteLitros_dosPequeñas()
+	public void sieteLitros_dosPequeñas(expected=NoSolution.class)
 	{
 		pequenas = 2;
 		grandes = 0;
@@ -90,7 +94,7 @@ public class EmbotelladoraTest {
 	}
 	
 	@Test
-	public void sieteLitros_cuatroPequeñas()
+	public void sieteLitros_cuatroPequeñas(expected=NoSolution.class)
 	{
 		pequenas = 4;
 		grandes = 0;
@@ -99,7 +103,7 @@ public class EmbotelladoraTest {
 	}
 	
 	@Test
-	public void sieteLitros_unaGRandes()
+	public void sieteLitros_unaGRandes(expected=NoSolution.class)
 	{
 		pequenas = 1;
 		grandes = 0;
