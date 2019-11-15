@@ -2,8 +2,6 @@ package E3_test;
 
 import static org.junit.Assert.assertEquals;
 
-import java.security.NoSolution;
-
 import org.junit.*;
 
 import E3_program.Embotelladora;
@@ -81,7 +79,7 @@ public class EmbotelladoraTest {
 		pequenas = 2;
 		grandes = 1;
 		litros= 7;
-		Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros);
+		assertEquals(2,Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros));
 	}
 	
 	@Test
@@ -90,7 +88,7 @@ public class EmbotelladoraTest {
 		pequenas = 2;
 		grandes = 0;
 		litros= 7;
-		Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros);
+		assertEquals(NoSolution.class,Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros));
 	}
 	
 	@Test
@@ -99,7 +97,7 @@ public class EmbotelladoraTest {
 		pequenas = 4;
 		grandes = 0;
 		litros= 7;
-		Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros);
+		assertEquals(NoSolution.class,Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros));
 	}
 	
 	@Test
@@ -108,7 +106,7 @@ public class EmbotelladoraTest {
 		pequenas = 1;
 		grandes = 0;
 		litros= 7;
-		Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros);
+		assertEquals(NoSolution.class,Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros));
 	}
 
 }
