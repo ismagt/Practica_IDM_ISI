@@ -53,7 +53,8 @@ public class RomanNumeral
 
 	    return !romano.contains("IIII") && !romano.contains("XXX") && !romano.contains("CCC")
 	    		&& !romano.contains("MMM") && !romano.contains("VV") && !romano.contains("LL")
-	    		&& !romano.contains("DD");
+	    		&& !romano.contains("DD") && !romano.contains("VL") && !romano.contains("VIV")
+	    		&& !romano.contains("XXM") && !romano.contains("CXM") && !romano.contains("XID");
 	}
 	
 	

@@ -1,6 +1,7 @@
 package E2_test;
 import static org.junit.Assert.*;
 
+
 import java.security.InvalidParameterException;
 
 import org.junit.*;
@@ -26,12 +27,6 @@ public class RomanNumberTest {
 	   numeroRomano = "";  
 	}
 	
-	@Test
-	public void testForAnyNumber()
-	{
-		numeroRomano="IIII";
-		assertEquals(InvalidParameterException.class,RomanNumeral.convertir(numeroRomano));
-	}
 	
 	@Test(expected=InvalidParameterException.class)
 	public void noIRepetidas()
@@ -73,7 +68,7 @@ public class RomanNumberTest {
 		
 	}
 	
-	@Test(expected=InvalidParameterException.class)
+	@Test()
 	public void iAntesV()
 	{
 		numeroRomano="XIV";
@@ -89,7 +84,7 @@ public class RomanNumberTest {
 		
 	}
 	
-	@Test(expected=InvalidParameterException.class)
+	@Test()
 	public void xAntesL()
 	{
 		numeroRomano="CXL";
@@ -106,7 +101,7 @@ public class RomanNumberTest {
 	}
 	
 	@Test(expected=InvalidParameterException.class)
-	public void vl()
+	public void VL()
 	{
 		numeroRomano="VL";
 		assertEquals(InvalidParameterException.class,RomanNumeral.convertir(numeroRomano));
