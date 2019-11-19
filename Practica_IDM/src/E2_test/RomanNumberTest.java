@@ -73,7 +73,7 @@ public class RomanNumberTest {
 	}
 	
 	@Test(expected=InvalidParameter.class)
-	public void iAntesv()
+	public void iAntesD()
 	{
 		numeroRomano="XID";
 		RomanNumeral.convertir(numeroRomano);

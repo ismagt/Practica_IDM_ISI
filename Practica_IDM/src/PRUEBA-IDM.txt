@@ -1,0 +1,90 @@
+
+
+/* Bisiesto */
+
+Año negativo
+Año 0
+Año dentro del dominio de entrada
+
+Comprueba que se lanza la excepcion cuando el año de entrada es 0
+@Test(expected=InvalidParameter.class)
+public void testForAnoCero()
+
+
+Comprueba que se lanza la excepcion cuando el año de entrada en un numero negativo
+@Test(expected=E1_program.InvalidParameter.class)
+public void testForNegativeAno()
+
+
+Comprueba que el test pasa cuando el año esta dentro del dominio
+@Test
+public void testForAnyAno()
+
+/* RomanNumeral */
+
+Los siguientes test tratan de comprobar que el numero introducido tien caracteres que se encuentran dentro del dominio de entrada y que siguen las normas de los numeros romanos
+
+Comprueba que se lanza InvalidParameter cuando hay 4 o mas I seguidas
+@Test(expected=InvalidParameter.class)
+public void noIRepetidas()
+
+Comprueba que se lanza InvalidParameter cuando hay 4 o mas M seguidas
+@Test(expected=InvalidParameter.class)
+public void noMRepetidas()
+
+Comprueba que se lanza InvalidParameter cuando hay 2 o mas V seguidas
+@Test(expected=InvalidParameter.class)
+public void noVRepetidas()
+
+Comprueba que se lanza InvalidParameter cuando hay 2 o mas D seguidas
+@Test(expected=InvalidParameter.class)
+public void noDRepetidas()
+
+Comprueba que se lanza InvalidParameter cuando las letras no pertenecen al dominio de los numeros romanos
+@Test(expected=InvalidParameter.class)
+public void contieneLetrasRomanos()
+
+Comprueba que se lanza InvalidParameter cuando hay una I antes de una D
+@Test(expected=InvalidParameter.class)
+public void iAntesD()
+
+Comprueba que se lanza InvalidParameter cuando hay una X antes de una L
+@Test(expected=InvalidParameter.class)
+public void xAntesl()
+
+Comprueba que se lanza InvalidParameter cuando hay una V antes de una L
+@Test(expected=InvalidParameter.class)
+public void VL()
+
+Comprueba que se lanza InvalidParameter cuando hay VIV
+@Test(expected=InvalidParameter.class)
+public void VIV()
+
+Comprueba que se lanza InvalidParameter cuando hay XXM
+@Test(expected=InvalidParameter.class)
+public void XXM()
+
+Comprueba que se lanza InvalidParameter cuando la entrada esta vacia
+@Test(expected = InvalidParameter.class)
+public void testForEmptyInput()
+
+Comprueba que se lanza InvalidParameter cuando la entrada esta fuera del dominio
+@Test(expected = InvalidParameter.class)
+public void testForOutDomain()
+
+Comprueba que el test pasa para un numero que cumple las reglas
+@Test()
+public void xAntesL()
+
+Comprueba que el test pasa para un numero que cumple las reglas
+@Test()
+public void iAntesV()
+
+Comprueba que se lanza NullPointerException cuando la entrada es null
+@Test(expected = NullPointerException.class)
+public void testForNullInput()
+
+
+/* Embotelladora */
+
+/* Descuento Black Friday*/
