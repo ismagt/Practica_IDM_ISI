@@ -11,7 +11,7 @@ public class DescuentoBlackFriday {
 	
 	public static double precioFinal(double precioOriginal, double porcentajeDescuento) throws InvalidParameterException {
 		if (porcentajeDescuento > 100.0 || porcentajeDescuento < 0.0 || precioOriginal <0.0 )
-			throw new InvalidParameterException();
+			throw new InvalidParameter();
 		return precioOriginal * (1.0 - (porcentajeDescuento/100.0));
 	}
 	

@@ -1,6 +1,6 @@
 package E1_test;
 import static org.junit.Assert.*;
-import java.security.InvalidParameterException;
+import 	E1_program.InvalidParameter;
 
 import org.junit.*;
 
@@ -24,7 +24,7 @@ public class BisiestoTest {
 	   ano = 0;  
 	}
 	
-	@Test(expected=InvalidParameterException.class)
+	@Test(expected=InvalidParameter.class)
 	public void testForAnoCero()
 	{
 		ano=0;
@@ -32,7 +32,7 @@ public class BisiestoTest {
 		
 	}
 	
-	@Test(expected=InvalidParameterException.class)
+	@Test(expected=E1_program.InvalidParameter.class)
 	public void testForNegativeAno()
 	{
 		ano=-1;

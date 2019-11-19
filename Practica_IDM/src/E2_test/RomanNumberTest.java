@@ -1,13 +1,9 @@
 package E2_test;
 import static org.junit.Assert.*;
 
-
-import java.security.InvalidParameterException;
-
 import org.junit.*;
 
-import E1_program.Bisiesto;
-import E2_program.RomanNumeral;
+import E2_program.*;
 
 import java.util.*;
 
@@ -28,43 +24,43 @@ public class RomanNumberTest {
 	}
 	
 	
-	@Test(expected=InvalidParameterException.class)
+	@Test(expected=InvalidParameter.class)
 	public void noIRepetidas()
 	{
 		numeroRomano="IIII";
-		assertEquals(InvalidParameterException.class,RomanNumeral.convertir(numeroRomano));
+		RomanNumeral.convertir(numeroRomano);
 		
 	}
 	
-	@Test(expected=InvalidParameterException.class)
+	@Test(expected=InvalidParameter.class)
 	public void noMRepetidas()
 	{
 		numeroRomano="MMMMM";
-		assertEquals(InvalidParameterException.class,RomanNumeral.convertir(numeroRomano));
+		RomanNumeral.convertir(numeroRomano);
 		
 	}
 	
-	@Test(expected=InvalidParameterException.class)
+	@Test(expected=InvalidParameter.class)
 	public void noVRepetidas()
 	{
 		numeroRomano="XVV";
-		assertEquals(InvalidParameterException.class,RomanNumeral.convertir(numeroRomano));
+		RomanNumeral.convertir(numeroRomano);
 		
 	}
 	
-	@Test(expected=InvalidParameterException.class)
+	@Test(expected=InvalidParameter.class)
 	public void noDRepetidas()
 	{
 		numeroRomano="MDD";
-		assertEquals(InvalidParameterException.class,RomanNumeral.convertir(numeroRomano));
+		RomanNumeral.convertir(numeroRomano);
 		
 	}
 	
-	@Test(expected=InvalidParameterException.class)
+	@Test(expected=InvalidParameter.class)
 	public void contieneLetrasRomanos()
 	{
 		numeroRomano="lafjjkf";
-		assertEquals(InvalidParameterException.class,RomanNumeral.convertir(numeroRomano));
+		RomanNumeral.convertir(numeroRomano);
 		
 	}
 	
@@ -76,11 +72,11 @@ public class RomanNumberTest {
 		
 	}
 	
-	@Test(expected=InvalidParameterException.class)
+	@Test(expected=InvalidParameter.class)
 	public void iAntesv()
 	{
 		numeroRomano="XID";
-		assertEquals(InvalidParameterException.class,RomanNumeral.convertir(numeroRomano));
+		RomanNumeral.convertir(numeroRomano);
 		
 	}
 	
@@ -92,50 +88,50 @@ public class RomanNumberTest {
 		
 	}
 	
-	@Test(expected=InvalidParameterException.class)
+	@Test(expected=InvalidParameter.class)
 	public void xAntesl()
 	{
 		numeroRomano="CXM";
-		assertEquals(InvalidParameterException.class,RomanNumeral.convertir(numeroRomano));
+		RomanNumeral.convertir(numeroRomano);
 		
 	}
 	
-	@Test(expected=InvalidParameterException.class)
+	@Test(expected=InvalidParameter.class)
 	public void VL()
 	{
 		numeroRomano="VL";
-		assertEquals(InvalidParameterException.class,RomanNumeral.convertir(numeroRomano));
+		RomanNumeral.convertir(numeroRomano);
 		
 	}
 	
-	@Test(expected=InvalidParameterException.class)
+	@Test(expected=InvalidParameter.class)
 	public void VIV()
 	{
 		numeroRomano="VIV";
-		assertEquals(InvalidParameterException.class,RomanNumeral.convertir(numeroRomano));
+		RomanNumeral.convertir(numeroRomano);
 		
 	}
 	
-	@Test(expected=InvalidParameterException.class)
+	@Test(expected=InvalidParameter.class)
 	public void XXM()
 	{
 		numeroRomano="XXM";
-		assertEquals(InvalidParameterException.class,RomanNumeral.convertir(numeroRomano));
+		RomanNumeral.convertir(numeroRomano);
 		
 	}
     
-	@Test(expected = InvalidParameterException.class)
+	@Test(expected = InvalidParameter.class)
 	public void testForEmptyInput()
 	{
 		numeroRomano="";
 		RomanNumeral.convertir(numeroRomano);
 	}
 	
-	@Test(expected = InvalidParameterException.class)
+	@Test(expected = InvalidParameter.class)
 	public void testForOutDomain()
 	{
 		numeroRomano="AAAA";
-		assertEquals(InvalidParameterException.class,RomanNumeral.convertir(numeroRomano));
+		RomanNumeral.convertir(numeroRomano);
 	}
 	
 	

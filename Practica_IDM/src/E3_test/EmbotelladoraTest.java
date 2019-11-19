@@ -34,11 +34,7 @@ public class EmbotelladoraTest {
 		pequenas = 0;
 		grandes = 0;
 		litros= 5;
-		try {
-			assertEquals(NoSolution.class,Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros));
-		} catch (NoSolution e) {
-			return ;
-		}
+		Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros);
 	}
 	
 	@Test(expected=NoSolution.class)
@@ -47,11 +43,7 @@ public class EmbotelladoraTest {
 		pequenas = 0;
 		grandes = 0;
 		litros= 5;
-		try {
-			Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros);
-		} catch (NoSolution e) {
-			return ;
-		}
+		Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros);
 	}
 	
 	@Test
@@ -60,24 +52,16 @@ public class EmbotelladoraTest {
 		pequenas = 0;
 		grandes = 1;
 		litros= 5;
-		try {
-			assertEquals(0,Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros));
-		} catch (NoSolution e) {
-			return ;
-		}
+		assertEquals(0,Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros));
 	}
 
-	@Test(expected=NoSolution.class)
+	@Test()
 	public void UnaBotellapequena()
 	{
 		pequenas = 1;
 		grandes = 1;
 		litros= 1;
-		try {
-			assertEquals(1,Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros));
-		} catch (NoSolution e) {
-			return ;
-		}	
+		Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros);
 	}
 	
 	@Test
@@ -86,11 +70,8 @@ public class EmbotelladoraTest {
 		pequenas = 2;
 		grandes = 1;
 		litros= 2;
-		try {
-			assertEquals(0,Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros));
-		} catch (NoSolution e) {
-			return ;
-		}	}
+		assertEquals(2,Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros));
+	}
 	
 	@Test
 	public void sieteLitros()
@@ -98,11 +79,7 @@ public class EmbotelladoraTest {
 		pequenas = 2;
 		grandes = 1;
 		litros= 7;
-		try {
-			assertEquals(2,Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros));
-		} catch (NoSolution e) {
-			return ;
-		}	
+		assertEquals(2,Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros));
 	}
 	
 	@Test(expected=NoSolution.class)
@@ -111,11 +88,7 @@ public class EmbotelladoraTest {
 		pequenas = 2;
 		grandes = 0;
 		litros= 7;
-		try {
-			Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros);
-		} catch (NoSolution e) {
-			return ;
-		}
+		Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros);
 	}
 	
 	@Test(expected=NoSolution.class)
@@ -124,11 +97,7 @@ public class EmbotelladoraTest {
 		pequenas = 4;
 		grandes = 0;
 		litros= 7;
-		try {
-			assertEquals(0,Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros));
-		} catch (NoSolution e) {
-			return ;
-		}
+		assertEquals(0,Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros));
 	}
 	
 	@Test(expected=NoSolution.class)
@@ -137,11 +106,7 @@ public class EmbotelladoraTest {
 		pequenas = 1;
 		grandes = 0;
 		litros= 7;
-		try {
-			Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros);
-		} catch (NoSolution e) {
-			return ;
-		}
+		Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros);
 	}
 
 }

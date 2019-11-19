@@ -1,6 +1,5 @@
 package E2_program;
 
-import java.security.InvalidParameterException;
 import java.util.Hashtable;
 
 public class RomanNumeral 
@@ -63,12 +62,12 @@ public class RomanNumeral
 	 * 
 	 * @param entrada: Cadena que se desea convertir
 	 * @return decimal: Numero en base 10
-	 * @throws InvalidParameterException
+	 * @throws InvalidParameter
 	 */
-	public static int convertir(String entrada) throws InvalidParameterException{
+	public static int convertir(String entrada) throws InvalidParameter{
 		String romano = entrada.replaceAll(" ","");	//elimina los espacios en blanco al inicio y al final de la cadena
 		if (!esRomano(romano))
-			throw new InvalidParameterException();
+			throw new InvalidParameter();
 		
 		llenarHashtable();
 		
@@ -83,11 +82,11 @@ public class RomanNumeral
 			if(numerosRomanos.containsKey(letra)){
 				decimal = decimal + numerosRomanos.get(letra);
 			}else {
-				throw new InvalidParameterException();
+				throw new InvalidParameter();
 			}
 		}
 		if (decimal == 0)
-			throw new InvalidParameterException();
+			throw new InvalidParameter();
 		decimal = restarTerminos(romano, decimal);
 		return decimal;
 	}
