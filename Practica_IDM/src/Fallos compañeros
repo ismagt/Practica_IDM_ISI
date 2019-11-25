@@ -1,0 +1,24 @@
+Fallos del repositorio https://github.com/dcabezas96/Practica_IDM localizados por nuestros test
+
+/* Bisiesto */
+
+El año 0 no se trata como un año invalido en este codigo ya que no arroja InvalidParameter
+
+/* RomanNumeral */
+
+El codigo testado permite que exista el patron VL
+El codigo testado permite que exista el patron VIV
+El codigo testado permite que exista el patron XXM
+El codigo testado permite que exista el patron ID
+El codigo testado no comprueba patrones no pertenecientes al dominio
+El codigo testado permite le patron XL
+El codigo testado permite el patron XM
+El codigo testado no controla correctamente las entradas nulas
+
+/* Embotelladora */
+
+Cuando se dispone de una botella grande y dos pequenas para dos litros el test devuelve -3 cuando deberia devolver 2
+
+/* Descuento Black Friday*/
+
+Pasan todos los test
