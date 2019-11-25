@@ -87,6 +87,126 @@ public void testForNullInput()
 
 /* Embotelladora */
 
+	Test simplon para probar happy test
+
+	@Test (expected=NoSolution.class)
+	public void testInitial()
+	{
+		pequenas = 0;
+		grandes = 0;
+		litros= 5;
+		try {
+			assertEquals(NoSolution.class,Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros));
+		} catch (NoSolution e) {
+			return ;
+		}
+	}
+
+	Comprueba que el test pase un caso en el que no hay botellas de entrada
+	@Test(expected=NoSolution.class)
+	public void noHayBotellas()
+	{
+		pequenas = 0;
+		grandes = 0;
+		litros= 5;
+		try {
+			Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros);
+		} catch (NoSolution e) {
+			return ;
+		}
+	}
+
+	Comprueba que el test pase un caso en el existe una unica botella grande
+	@Test
+	public void UnaBotellaGrande()
+	{
+		pequenas = 0;
+		grandes = 1;
+		litros= 5;
+		try {
+			assertEquals(0,Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros));
+		} catch (NoSolution e) {
+			return ;
+		}
+	}
+
+	Comprueba que el test pase un caso en el que hay una botella pequeña
+	@Test()
+	public void UnaBotellapequena() throws NoSolution
+	{
+		pequenas = 1;
+		grandes = 1;
+		litros= 1;
+		assertEquals(1,Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros));
+	}
+
+	Comprueba que el test pase un caso en el que hay dos botellas pequeñas y una grande, consiguiendo que salga dos botellas
+	@Test
+	public void dosBotellapequena() throws NoSolution
+	{
+		pequenas = 2;
+		grandes = 1;
+		litros= 2;
+
+		assertEquals(0,Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros));
+	}
+
+	Comprueba que el test pase un caso en el que se tienen 7 litros
+	@Test
+	public void sieteLitros()
+	{
+		pequenas = 2;
+		grandes = 1;
+		litros= 7;
+		try {
+			assertEquals(2,Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros));
+		} catch (NoSolution e) {
+			return ;
+		}	
+	}
+
+	Comprueba que el test pase un caso en el que tiene 7 litros y dos botellas pequeñas, a falta de mas botellas
+	@Test(expected=NoSolution.class)
+	public void sieteLitros_dosPequenas()
+	{
+		pequenas = 2;
+		grandes = 0;
+		litros= 7;
+		try {
+			Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros);
+		} catch (NoSolution e) {
+			return ;
+		}
+	}
+
+	Comprueba que el test pase un caso en el que hay 7 litros y 4 botellas pequeñas, no satisface los litros
+	@Test(expected=NoSolution.class)
+	public void sieteLitros_cuatroPequenas()
+	{
+		pequenas = 4;
+		grandes = 0;
+		litros= 7;
+		try {
+			assertEquals(0,Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros));
+		} catch (NoSolution e) {
+			return ;
+		}
+	}
+
+	Comprueba que el test pase un caso en el que hay 7 litros, con una botellas pequeña
+	@Test(expected=NoSolution.class)
+	public void sieteLitros_unaGrandes()
+	{
+		pequenas = 1;
+		grandes = 0;
+		litros= 7;
+		try {
+			Embotelladora.calculaBotellasPequenas(pequenas, grandes, litros);
+		} catch (NoSolution e) {
+			return ;
+		}
+	}
+
 
 /* Descuento Black Friday*/
 
